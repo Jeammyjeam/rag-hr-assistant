@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG HR Policy Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RAG HR Policy Assistant</h1>
+            <p>Upload your HR policy document and ask questions</p>
+        </header>
+
+        <main>
+            <section id="upload-section" class="card">
+                <h2>Step 1: Upload Document</h2>
+                <div class="upload-area">
+                    <input type="file" id="pdf-upload" accept=".pdf" hidden>
+                    <label for="pdf-upload" class="upload-label">
+                        <span>Choose PDF File</span>
+                    </label>
+                    <p id="file-info" class="file-info"></p>
+                </div>
+                <div id="upload-status" class="status"></div>
+            </section>
+
+            <section id="chat-section" class="card hidden">
+                <h2>Step 2: Ask Questions</h2>
+                <div id="chat-messages" class="chat-messages"></div>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="question-input" 
+                        placeholder="Ask a question about the HR policy..."
+                        disabled
+                    >
+                    <button id="ask-button" disabled>Ask</button>
+                </div>
+            </section>
+
+            <section class="card info-card">
+                <h3>How RAG Works</h3>
+                <ul>
+                    <li><strong>Retrieval:</strong> Extract and index document content</li>
+                    <li><strong>Augmented:</strong> Provide relevant context with each query</li>
+                    <li><strong>Generation:</strong> AI generates accurate, sourced answers</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
